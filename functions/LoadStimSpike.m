@@ -10,7 +10,7 @@ for j = par.w_moths
         Sp.(['M',num2str(j)]) = csvread( par.SpikeName{j}  , 1,0);
     else
         Sp.SpikeName{j} = 'Not Found';
-        Display([ par.SpikeName{j} ,'.txt, does not exist' ]);
+        display([ par.SpikeName{j} ,'.txt, does not exist' ]);
     end
     
     if exist( par.StimName{j})             %  load Stimulus 
@@ -22,7 +22,7 @@ for j = par.w_moths
         fprintf('   Data for Moth %d loaded \n', j);
     else
         Sp.(['M',num2str(j)]) = 0;      
-        Display([ par.StimName{j},'.txt, does not exist' ]);
+        display([ par.StimName{j},'.txt, does not exist' ]);
     end
 end
 

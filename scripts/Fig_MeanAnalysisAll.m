@@ -35,6 +35,7 @@ for j = 1:size(par.MothN,1)
             M.proj(j,find( L.cat( par.MothN(j,1),:) ==k )   )  ,...
             'FaceColor',Lcol(k,:),'EdgeColor','none')
         end
+        axis([0,26,-0.5,0.5])
     subplot(10,4,( j-1- (floor((j-1)/10))*10)*4+3  )
         plot( (1:2.05e4)/2e4, F.drate(j,1:1000:length(F.drate)) )
     subplot(10,4,( j-1- (floor((j-1)/10))*10)*4+4  )        

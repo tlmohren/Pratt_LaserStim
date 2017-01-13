@@ -47,12 +47,12 @@ if par.diagnostic_fig
 
     subplot(313)
       for g = 1:L.pulses(stimn)
-          stimrange = round(  L.st(stimn,g)-5e4 :Pred: L.end(stimn,g) + 3e5,-4);
-           r = L.cat(stimn,g);
-           c = sum( L.cat(stimn,1:g) == L.cat(stimn,g) );
-           h(1) = fill([L.st(stimn,g);L.st(stimn,g);L.end(stimn,g);L.end(stimn,g)]/4e4,...
-                     [0,1,1,0]*M.proj(j,g)/norm(M.proj),...
-                     Lcol(L.cat(par.MothN(j,1),g),:),'EdgeColor','none');
+%           stimrange = round(  L.st(stimn,g)-5e4 :Pred: L.end(stimn,g) + 3e5,-4);
+%            r = L.cat(stimn,g);
+%            c = sum( L.cat(stimn,1:g) == L.cat(stimn,g) );
+%            h(1) = fill([L.st(stimn,g);L.st(stimn,g);L.end(stimn,g);L.end(stimn,g)]/4e4,...
+%                      [0,1,1,0]*M.proj(j,g)/norm(M.proj),...
+%                      Lcol(L.cat(par.MothN(j,1),g),:),'EdgeColor','none');
            hold on
         for k = 1:5
 %             bar( find( L.cat( par.MothN( j   ,1),:) ==k)    ,...
@@ -64,5 +64,5 @@ if par.diagnostic_fig
         xlabel('Time [s]' )
         ylabel(' $\frac{X \cdot \bar{X}}{|X \cdot \bar{X}|}$','Interpreter','LaTex' )
       plot([0,500],[0,0],'k','LineWidth',[0.7])
-      axis([0,500,-1,1])
+      axis([0,500,-0.5,0.5])
 end

@@ -6,6 +6,7 @@ cd(base_dir);
 
 addpath([base_dir '\functions'])
 addpath([base_dir par.datafolder])
+addpath(par.datafolder)
 addpath([base_dir '\scripts'])
 
 
