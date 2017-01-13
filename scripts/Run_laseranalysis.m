@@ -9,11 +9,12 @@ clc;clear all;close all
 
 %% Initialize, set up parameters
 
-par.diagnostic_fig = 0 ;            % toggle on if you want to see intermediate figures(useful for diagnosis) 
-par.w_moths = 1;                  % Select w(hich)_moth to analyze, any combination between 1 and 25
+par.diagnostic_fig = 1 ;            % toggle on if you want to see intermediate figures(useful for diagnosis) 
+par.w_moths = 1:33;                  % Select w(hich)_moth to analyze, any combination between 1 and 25
 par.N_last = 2.05e7;                % last input to read 
-par.figname = 'MeanSpikeResponse';  % give name to saved figure
-par.datafolder ='C:\Users\Daniellab\Documents\Thomas Mohren\Pratt_LaserStim_data\Revised Stim';
+par.figname = 'MeanSpikeResponse_M1toM33';  % give name to saved figure
+% par.datafolder ='C:\Users\Daniellab\Documents\Thomas Mohren\Pratt_LaserStim_data\Revised Stim';
+par.datafolder ='C:\Users\Daniellab\Documents\Brandon Wing Data\Laser Analysis\data';
 par.loop_names = 1;                 % Either use a loop to create file names, or list them in a way
 
 set(0,'DefaultlinelineWidth',2)
@@ -23,18 +24,8 @@ run('link_folders_laser')
 
 if par.loop_names == 1
     for j = par.w_moths
-        if exist([ 'Corrected_Revised_Stim_M',num2str(j),'_sorted.txt' ])
-            par.SpikeName{j} = ['Corrected_Revised_Stim_M',num2str(j),'_sorted.txt'];
-        elseif exist([ 'Revised_Stim_M',num2str(j),'_sorted.txt'])        
-            par.SpikeName{j} = ['Revised_Stim_M',num2str(j),'_sorted.txt'];
-        else
-            par.SpikeName{j} = 'Not Found';
-        end
-        if exist([ 'Revised_Stim_M',num2str(j),'.txt'])        
-            par.StimName{j} = ['Revised_Stim_M',num2str(j),'.txt'];
-        else
-            par.StimName{j} = 'Not Found';
-        end
+        par.SpikeName{j} = ['M',num2str(j),'_Sorted'];
+        par.StimName{j} = ['M',num2str(j),'_Stim'];
     end
 else
     par.SpikeName = {'Revised_Stim_M1_sorted.txt','Revised_Stim_M2_sorted.txt','Revised_Stim_M3_sorted.txt'  'Revised_Stim_M4_sorted.txt' };
