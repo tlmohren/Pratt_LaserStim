@@ -9,12 +9,11 @@ clc;clear all;close all
 
 %% Initialize, set up parameters
 
-par.diagnostic_fig = 1 ;
+par.diagnostic_fig = 0 ;            % toggle on if you want to see intermediate figures(useful for diagnosis) 
 par.w_moths = 1;                  % Select w(hich)_moth to analyze, any combination between 1 and 25
 par.N_last = 2.05e7;                % last input to read 
 par.figname = 'MeanSpikeResponse';  % give name to saved figure
-% par.datafolder = '\data\Revised Stim';  % select which data folder to use
-par.datafolder ='C:\Users\Daniellab\Documents\Thomas Mohren\Laseranalysis_Ephys_paper_NoLongerUpdated\data\Revised Stim';
+par.datafolder ='C:\Users\Daniellab\Documents\Thomas Mohren\Pratt_LaserStim_data\Revised Stim';
 par.loop_names = 1;                 % Either use a loop to create file names, or list them in a way
 
 set(0,'DefaultlinelineWidth',2)
